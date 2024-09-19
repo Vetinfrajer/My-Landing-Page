@@ -73,18 +73,20 @@ export default {
   background-size: cover;
   background-position: center;
 }
-
+.hero-subtitle{
+  font-size: 2rem;
+}
 .hero-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: left;
   z-index: 1;
-  padding: 0 20px;
+  padding: 0 30px; /* Increase padding for more space around text */
 }
 
 .hero-title {
-  font-size: 4rem;
+  font-size: 6rem; /* Increase font size */
   font-weight: bold;
   color: #f0f0f0;
   margin-bottom: 0.5rem;
@@ -97,6 +99,7 @@ export default {
   overflow: hidden;
   display: inline-block;
   vertical-align: bottom;
+  
 }
 
 @keyframes typing {
@@ -118,7 +121,7 @@ export default {
 }
 
 .hero-image img {
-  max-width: 100%;
+  max-width: 120%; /* Increase max-width */
   height: auto;
   object-fit: contain;
   border-radius: 10px;
@@ -137,11 +140,11 @@ export default {
   }
 
   .hero-title {
-    font-size: 3rem;
+    font-size: 4rem; /* Adjust font size for small screens */
   }
 
   .typing-animation {
-    font-size: 1.5rem;
+    font-size: 2rem; /* Increase font size for small screens */
   }
 
   .hero-image {
