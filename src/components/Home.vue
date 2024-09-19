@@ -118,6 +118,7 @@ export default {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  border-radius: 10px;
 }
 
 .hero-image img {
