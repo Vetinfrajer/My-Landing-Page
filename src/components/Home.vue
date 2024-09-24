@@ -5,6 +5,9 @@
       <p class="hero-subtitle typing-animation">
         Junior <span class="dynamic-text">{{ currentText }}</span>
       </p>
+      <div class="contact">
+        <p><a href="https://www.instagram.com/vetinfrajer/"><img src="../assets/instagram.png" alt="ig"  class="ig-logo"></a></p>
+      </div>
     </div>
     <div class="hero-image">
       <img src="../assets/jafrajer.png" alt="jafrajer">
@@ -62,6 +65,10 @@ export default {
 </script>
 
 <style scoped>
+.ig-logo{
+  width: 50px;
+  height: 50px;
+}
 .hero-section {
   display: grid;
   grid-template-columns: 2fr 1fr;
