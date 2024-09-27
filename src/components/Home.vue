@@ -75,7 +75,7 @@ export default {
 </script>
 
 <style scoped>
-@media only screen and (max-width: 429) {
+@media only screen and (max-width: 450px) {
   .hero-subtitle {
     font-size: 1rem !important;
   }
