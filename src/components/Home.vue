@@ -6,7 +6,17 @@
         Junior <span class="dynamic-text">{{ currentText }}</span>
       </p>
       <div class="contact">
-        <p><a href="https://www.instagram.com/vetinfrajer/"><img src="../assets/instagram.png" alt="ig"  class="ig-logo"></a></p>
+        <div class="logo-row">
+          <a href="https://www.instagram.com/vetinfrajer/" target="_blank">
+            <img src="../assets/instagram.png" alt="ig" class="logo">
+          </a>
+          <a href="https://www.linkedin.com/in/michal-veti%C5%A1ka-7b05b5262/" target="_blank">
+            <img src="../assets/linkedin2.png" alt="linkedin" class="logo">
+          </a>
+          <a href="https://github.com/Vetinfrajer" target="_blank">
+            <img src="../assets/github.png" alt="github" class="logo">
+          </a>
+        </div>
       </div>
     </div>
     <div class="hero-image">
@@ -65,10 +75,26 @@ export default {
 </script>
 
 <style scoped>
-.ig-logo{
+.logo-row {
+  display: flex;
+  justify-content: flex-start;
+  /* Adjusts spacing between logos */
+  align-items: center;
+  /* Align logos vertically */
+}
+
+.logo {
+  max-width: 50px;
+  /* Adjust size of logos */
+  margin: 0 5px;
+  /* Adds space around logos */
+}
+
+.ig-logo {
   width: 50px;
   height: 50px;
 }
+
 .hero-section {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -80,20 +106,24 @@ export default {
   background-size: cover;
   background-position: center;
 }
-.hero-subtitle{
+
+.hero-subtitle {
   font-size: 2rem;
 }
+
 .hero-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: left;
   z-index: 1;
-  padding: 0 30px; /* Increase padding for more space around text */
+  padding: 0 30px;
+  /* Increase padding for more space around text */
 }
 
 .hero-title {
-  font-size: 6rem; /* Increase font size */
+  font-size: 6rem;
+  /* Increase font size */
   font-weight: bold;
   color: #f0f0f0;
   margin-bottom: 0.5rem;
@@ -106,12 +136,17 @@ export default {
   overflow: hidden;
   display: inline-block;
   vertical-align: bottom;
-  
+
 }
 
 @keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes blink {
@@ -129,7 +164,8 @@ export default {
 }
 
 .hero-image img {
-  max-width: 120%; /* Increase max-width */
+  max-width: 120%;
+  /* Increase max-width */
   height: auto;
   object-fit: contain;
   border-radius: 10px;
@@ -148,15 +184,18 @@ export default {
   }
 
   .hero-title {
-    font-size: 4rem; /* Adjust font size for small screens */
+    font-size: 4rem;
+    /* Adjust font size for small screens */
   }
 
   .typing-animation {
-    font-size: 2rem; /* Increase font size for small screens */
+    font-size: 2rem;
+    /* Increase font size for small screens */
   }
 
   .hero-image {
-    order: -1; /* Move image to the top on small screens */
+    order: -1;
+    /* Move image to the top on small screens */
     margin-top: 20px;
   }
 }
