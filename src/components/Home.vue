@@ -75,6 +75,21 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (max-width: 429) {
+  .hero-subtitle {
+    font-size: 1rem !important;
+  }
+
+  .typing-animation {
+    font-size: 1rem !important;
+  }
+
+  .hero-title {
+    font-size: 2rem !important;
+  }
+}
+
+
 .logo-row {
   display: flex;
   justify-content: flex-start;
