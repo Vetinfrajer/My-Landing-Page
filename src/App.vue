@@ -4,6 +4,8 @@
     <div v-if="!isloading">
       <div id="app">
         <Home />
+        <AboutMe />
+        <ProjectLinks />
       </div>
     </div>
   </div>
@@ -12,12 +14,16 @@
 <script>
 import Home from './components/Home.vue';
 import Loader from './components/LoaderAnimation.vue';
+import AboutMe from './components/AboutMe.vue';
+import ProjectLinks from './components/ProjectLinks.vue';
 
 export default {
   name: 'App',
   components: {
     Home,
-    Loader
+    Loader,
+    ProjectLinks,
+    AboutMe
   },
   data(){
     return{
