@@ -99,28 +99,48 @@ export default {
 <style scoped>
 .about-page {
   padding: 50px 20px;
-  background-color: #000;
+  background: transparent;
   color: #fff;
   text-align: center;
 }
 
 .about-title {
-  color: #d4af37;
+  color: #5ecbff;
   font-size: 2.5em;
   margin-bottom: 40px;
+  text-shadow: 0 2px 16px #5ecbff;
+  position: relative;
+  display: inline-block;
+}
+
+.about-title::after {
+  content: '';
+  display: block;
+  width: 60%;
+  height: 4px;
+  background: linear-gradient(90deg, #5ecbff, #2575fc, #6a11cb);
+  border-radius: 2px;
+  margin: 0.2em auto 0 auto;
+  opacity: 0.7;
 }
 
 .about-box {
   width: 100%;
   max-width: 800px;
-  height: 300px;
-  background-color: #1a1a1a;
-  margin: 0 auto;
+  min-height: 260px;
+  background: rgba(255,255,255,0.13);
+  box-shadow: 0 8px 32px 0 #5ecbff;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 32px;
+  border: 1.5px solid #5ecbff;
+  margin: 0 auto 48px auto;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.4s cubic-bezier(.25,.8,.25,1), box-shadow 0.3s;
+  will-change: transform;
 }
 
 .about-box-left {
@@ -132,8 +152,8 @@ export default {
 }
 
 .about-box:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 20px #d4af37;
+  transform: translateY(-14px) scale(1.04) rotateY(4deg);
+  box-shadow: 0 0 48px #5ecbff, 0 8px 32px 0 #5ecbff;
 }
 
 /* Oranžový ohraničující efekt kolem čtverce */
@@ -145,12 +165,12 @@ export default {
   width: calc(100% + 8px);
   height: calc(100% + 8px);
   border: 2px solid transparent;
-  border-radius: 4px;
+  border-radius: 20px;
   transition: border-color 0.3s ease;
 }
 
 .about-box:hover::before {
-  border-color: #d4af37;
+  border-color: #5ecbff;
   animation: border-spin 2s linear infinite;
 }
 
@@ -163,17 +183,17 @@ export default {
 }
 
 .about-box:hover .about-text {
-  color: #d4af37;
+  color: #5ecbff;
   animation: text-glow 1.5s infinite alternate;
 }
 
 /* Animace svítivého textu */
 @keyframes text-glow {
   0% {
-    color: #d4af37;
+    color: #5ecbff;
   }
   100% {
-    color: #d4af37;
+    color: #5ecbff;
   }
 }
 
