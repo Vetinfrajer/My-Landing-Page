@@ -1,36 +1,33 @@
 <template>
     <div class="project-links">
       <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-8">
-            <h2 class="text-center mb-4">Moje Projekty</h2>
+        <h2 class="text-center mb-4">Moje Projekty</h2>
+        <div class="projects-row">
+          <!-- Rezervační systém -->
+          <div class="project">
+            <div class="project-image" @mouseover="hoveredProject = 'reservation'" @mouseleave="hoveredProject = null"></div>
+            <h3 :class="['project-title', { 'hovered': hoveredProject === 'reservation' }]">Rezervační systém</h3>
+            <p :class="['project-description', { 'shine-text': hoveredProject === 'reservation' }]">
+              Work in progress
+            </p>
+          </div>
   
-            <!-- Rezervační systém -->
-            <div class="project">
-              <div class="project-image" @mouseover="hoveredProject = 'reservation'" @mouseleave="hoveredProject = null"></div>
-              <h3 :class="['project-title', { 'hovered': hoveredProject === 'reservation' }]">Rezervační systém</h3>
-              <p :class="['project-description', { 'shine-text': hoveredProject === 'reservation' }]">
-                Work in progress
-              </p>
-            </div>
+          <!-- Chatovací aplikace -->
+          <div class="project">
+            <div class="project-image" @mouseover="hoveredProject = 'chat'" @mouseleave="hoveredProject = null"></div>
+            <h3 :class="['project-title', { 'hovered': hoveredProject === 'chat' }]">Chatovací aplikace</h3>
+            <p :class="['project-description', { 'shine-text': hoveredProject === 'chat' }]">
+              Work in progress
+            </p>
+          </div>
   
-            <!-- Chatovací aplikace -->
-            <div class="project">
-              <div class="project-image" @mouseover="hoveredProject = 'chat'" @mouseleave="hoveredProject = null"></div>
-              <h3 :class="['project-title', { 'hovered': hoveredProject === 'chat' }]">Chatovací aplikace</h3>
-              <p :class="['project-description', { 'shine-text': hoveredProject === 'chat' }]">
-                Work in progress
-              </p>
-            </div>
-  
-            <!-- Hra Flappy Bird -->
-            <div class="project">
-              <div class="project-image" @mouseover="hoveredProject = 'flappy'" @mouseleave="hoveredProject = null"></div>
-              <h3 :class="['project-title', { 'hovered': hoveredProject === 'flappy' }]">Hra Flappy Bird</h3>
-              <p :class="['project-description', { 'shine-text': hoveredProject === 'flappy' }]">
-                Work in progress
-              </p>
-            </div>
+          <!-- Hra Flappy Bird -->
+          <div class="project">
+            <div class="project-image" @mouseover="hoveredProject = 'flappy'" @mouseleave="hoveredProject = null"></div>
+            <h3 :class="['project-title', { 'hovered': hoveredProject === 'flappy' }]">Hra Flappy Bird</h3>
+            <p :class="['project-description', { 'shine-text': hoveredProject === 'flappy' }]">
+              Work in progress
+            </p>
           </div>
         </div>
       </div>
@@ -51,56 +48,87 @@
   <style scoped>
   .project-links {
     padding: 50px 20px;
-    background-color: #000;
+    background: transparent;
     color: #fff;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .projects-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 48px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
   }
   
   .project {
-    margin-bottom: 40px;
+    background: rgba(255,255,255,0.15);
+    box-shadow: 0 8px 32px 0 #5ecbff;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 24px;
+    border: 1.5px solid #5ecbff;
+    padding: 30px 24px 20px 24px;
+    transition: transform 0.4s cubic-bezier(.25,.8,.25,1), box-shadow 0.3s;
+    position: relative;
+    min-width: 260px;
+    max-width: 320px;
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .project:hover {
+    transform: scale(1.06) translateY(-8px);
+    box-shadow: 0 0 48px #5ecbff, 0 8px 32px 0 #5ecbff;
   }
   
   .project-image {
-    width: 200px;
-    height: 200px;
-    background-color: #444;
-    position: relative;
-    margin: 0 auto 20px;
-    transition: transform 0.3s ease;
-  }
-  
-  .project-image::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 2px solid transparent;
-    border-radius: 2px;
-    transition: border-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .project-image:hover {
-    transform: scale(1.05);
-  }
-  
-  .project-image:hover::before {
-    border-color: #d4af37;
-    transform: scale(1.05);
+    width: 180px;
+    height: 180px;
+    background: rgba(255,255,255,0.10);
+    box-shadow: 0 4px 16px 0 #5ecbff;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 18px;
+    margin-bottom: 24px;
   }
   
   .project-title {
-    font-size: 1.5em;
+    font-size: 1.3em;
     color: #fff;
-    margin: 10px 0;
-    transition: color 0.3s ease;
+    margin: 10px 0 4px 0;
+    transition: color 0.3s, text-shadow 0.3s;
+    text-shadow: 0 2px 8px #5ecbff;
+    position: relative;
+    display: inline-block;
   }
   
-  /* Animace změny barvy a pulzace */
+  .project-title::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 4px;
+    background: linear-gradient(90deg, #5ecbff, #7b6cf6, #a18cd1);
+    border-radius: 2px;
+    margin: 0.2em auto 0 auto;
+    opacity: 0.7;
+  }
+  
   .project-title.hovered {
-    color: #d4af37;
+    color: #5ecbff;
     animation: pulse 1s infinite alternate;
+    text-shadow: 0 0 16px #5ecbff;
   }
   
   @keyframes pulse {
@@ -113,16 +141,15 @@
   }
   
   .project-description {
-    color: #ccc;
+    color: #fff;
     font-size: 1em;
-    padding: 0 15px;
-    position: relative;
-    overflow: hidden;
+    padding: 0 10px;
+    margin-top: 8px;
+    opacity: 0.8;
   }
   
-  /* Efekt lesknutí textu */
   .project-description.shine-text {
-    background: linear-gradient(90deg, #ccc, #d4af37, #ccc);
+    background: linear-gradient(90deg, #fff, #5ecbff, #fff);
     background-size: 200%;
     -webkit-background-clip: text;
     color: transparent;
@@ -137,7 +164,35 @@
       background-position: -200% 0;
     }
   }
-  h2{
-    color: #d4af37;
+  
+  h2 {
+    color: #5ecbff;
+    font-size: 2.2em;
+    text-shadow: 0 2px 16px #5ecbff;
+    position: relative;
+    display: inline-block;
+  }
+  
+  h2::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 4px;
+    background: linear-gradient(90deg, #5ecbff, #2575fc, #6a11cb);
+    border-radius: 2px;
+    margin: 0.2em auto 0 auto;
+    opacity: 0.7;
+  }
+  
+  @media (max-width: 1100px) {
+    .projects-row {
+      flex-direction: column;
+      gap: 32px;
+      align-items: center;
+    }
+    .project {
+      min-width: 220px;
+      max-width: 400px;
+    }
   }
   </style>
