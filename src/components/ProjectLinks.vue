@@ -24,11 +24,13 @@
           </div>
   
           <!-- Hra Flappy Bird -->
-          <div class="project">
-            <div class="project-image" @mouseover="hoveredProject = 'flappy'" @mouseleave="hoveredProject = null"></div>
+          <div class="project clickable" @click="openFlappyBird" @mouseover="hoveredProject = 'flappy'" @mouseleave="hoveredProject = null">
+            <div class="project-image">
+              <img src="@/assets/flappylogo.png" alt="Náhled Flappy Bird" style="width:100%;height:100%;object-fit:cover;border-radius:14px;" />
+            </div>
             <h3 :class="['project-title', { 'hovered': hoveredProject === 'flappy' }]">Hra Flappy Bird</h3>
             <p :class="['project-description', { 'shine-text': hoveredProject === 'flappy' }]">
-              Work in progress
+              Klikněte pro zobrazení
             </p>
           </div>
         </div>
@@ -47,6 +49,9 @@
     methods: {
       openChatApp() {
         window.open('https://6866fc231ae9dc36f8190f7b--vetinschatapp.netlify.app/', '_blank');
+      },
+      openFlappyBird() {
+        window.open('https://vetinsflappybird.netlify.app/', '_blank');
       },
     },
   };
