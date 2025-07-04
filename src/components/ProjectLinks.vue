@@ -13,11 +13,13 @@
           </div>
   
           <!-- Chatovací aplikace -->
-          <div class="project">
-            <div class="project-image" @mouseover="hoveredProject = 'chat'" @mouseleave="hoveredProject = null"></div>
+          <div class="project clickable" @click="openChatApp" @mouseover="hoveredProject = 'chat'" @mouseleave="hoveredProject = null">
+            <div class="project-image">
+              <img src="@/assets/chatovaciappka.png" alt="Náhled Chatovací aplikace" style="width:100%;height:100%;object-fit:cover;border-radius:14px;" />
+            </div>
             <h3 :class="['project-title', { 'hovered': hoveredProject === 'chat' }]">Chatovací aplikace</h3>
             <p :class="['project-description', { 'shine-text': hoveredProject === 'chat' }]">
-              Work in progress
+              Klikněte pro zobrazení
             </p>
           </div>
   
@@ -41,6 +43,11 @@
       return {
         hoveredProject: null,
       };
+    },
+    methods: {
+      openChatApp() {
+        window.open('https://6866fc231ae9dc36f8190f7b--vetinschatapp.netlify.app/', '_blank');
+      },
     },
   };
   </script>
@@ -89,6 +96,15 @@
   }
   
   .project:hover {
+    transform: scale(1.06) translateY(-8px);
+    box-shadow: 0 0 48px #5ecbff, 0 8px 32px 0 #5ecbff;
+  }
+  
+  .project.clickable {
+    cursor: pointer;
+  }
+  
+  .project.clickable:hover {
     transform: scale(1.06) translateY(-8px);
     box-shadow: 0 0 48px #5ecbff, 0 8px 32px 0 #5ecbff;
   }
